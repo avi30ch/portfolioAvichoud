@@ -58,7 +58,7 @@ a:hover{ border-bottom-color: rgba(140,0,40,1); }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(100, 67, 67, 0.85);
+  background: rgba(253, 251, 251, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(0,0,0,0.10);
 }
