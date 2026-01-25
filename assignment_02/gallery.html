@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avi Choudhary | Gallery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --ink:#1f1f1f;
+      --muted:#5b5560;
+      --line: rgba(0,0,0,0.10);
+      --radius:18px;
+      --accent: rgb(140, 0, 40);
+      --bodybg: linear-gradient(135deg, rgb(207,136,136), rgb(255,236,236));
+      --contentbg: rgba(255,255,255,0.92);
+      --tilebg: rgba(255,255,255,0.65);
+    }
+
+    body{
+      margin:0;
+      background: var(--bodybg);
+      color: var(--ink);
+      font-family: "Times New Roman", serif;
+    }
+
+    /* ===== Header (different from home page) ===== */
+    .header{
+      height: 360px;
+      width: 100%;
+      background-image: url("img/galleryheader.jpg"); /* change as needed */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding: 0 16px 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+    }
+    .header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.05));
+    }
+    .header h1{
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 54px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #fff;
+      text-shadow:
+        -1px -1px 0 rgba(0,0,0,0.7),
+         1px -1px 0 rgba(0,0,0,0.7),
+        -1px  1px 0 rgba(0,0,0,0.7),
+         1px  1px 0 rgba(0,0,0,0.7);
+    }
+
+    /* ===== Content area (different background from body) ===== */
+    .content{
+      width: min(1100px, 88%);
+      margin: 26px auto 60px;
+      background: var(--contentbg);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.16);
+      backdrop-filter: blur(6px);
+      padding: 26px 22px 30px;
+    }
+
+    .top-row{
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .top-row h2{
+      margin: 0;
+      font-family:"Inter", sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .top-row p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 62ch;
+    }
+
+    /* ===== Collage grid ===== */
+    .collage{
+      margin-top: 18px;
+      display: grid;
+      gap: 14px; /* consistent spacing */
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    /* Placeholder tiles */
+    .tile{
+      background: var(--tilebg);
+      border: 1px solid rgba(0,0,0,0.14);
+      border-radius: 16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+      overflow: hidden;
+      min-height: 120px;
+      position: relative;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+      padding: 12px 12px;
+      font-family:"Inter", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: rgba(0,0,0,0.72);
+    }
+
+    .tile::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg,
+          rgba(140,0,40,0.12),
+          rgba(255,255,255,0.00) 60%);
+      pointer-events:none;
+    }
+
+    .label{
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+
+    /* ===== Vary sizes/layouts (not all same) ===== */
+    .t1  { grid-column: 1 / span 7;  grid-row: 1 / span 2; min-height: 260px; }
+    .t2  { grid-column: 8 / span 5;  grid-row: 1 / span 1; min-height: 160px; }
+    .t3  { grid-column: 8 / span 3;  grid-row: 2 / span 1; min-height: 140px; }
+    .t4  { grid-column: 11 / span 2; grid-row: 2 / span 2; min-height: 220px; }
+
+    .t5  { grid-column: 1 / span 4;  grid-row: 3 / span 1; min-height: 150px; }
+    .t6  { grid-column: 5 / span 6;  grid-row: 3 / span 1; min-height: 150px; }
+    .t7  { grid-column: 1 / span 6;  grid-row: 4 / span 1; min-height: 170px; }
+    .t8  { grid-column: 7 / span 4;  grid-row: 4 / span 2; min-height: 260px; }
+
+    .t9  { grid-column: 1 / span 3;  grid-row: 5 / span 1; min-height: 130px; }
+    .t10 { grid-column: 4 / span 3;  grid-row: 5 / span 1; min-height: 130px; }
+    .t11 { grid-column: 11 / span 2; grid-row: 4 / span 1; min-height: 120px; }
+    .t12 { grid-column: 11 / span 2; grid-row: 5 / span 1; min-height: 130px; }
+
+    /* Small hover polish */
+    .tile{
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .tile:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+    }
+
+    /* Responsive: stack to 2 columns on small screens */
+    @media (max-width: 900px){
+      .collage{
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .t1 { grid-column: 1 / span 6; grid-row: auto; min-height: 220px; }
+      .t2 { grid-column: 1 / span 3; min-height: 160px; }
+      .t3 { grid-column: 4 / span 3; min-height: 160px; }
+      .t4 { grid-column: 1 / span 6; min-height: 200px; }
+
+      .t5,.t6,.t7,.t8,.t9,.t10,.t11,.t12{
+        grid-column: 1 / span 3;
+        min-height: 150px;
+      }
+      .t8{ grid-column: 4 / span 3; min-height: 150px; }
+    }
+
+    @media (max-width: 560px){
+      .header h1{ font-size: 40px; }
+      .collage{ grid-template-columns: repeat(2, 1fr); }
+      .tile{ grid-column: auto !important; min-height: 140px; }
+    }
+        .tile{
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Individual images */
+    .t1  { background-image: url("img/marvell4.jpg"); }
+    .t2  { background-image: url("img/halfM.png"); }
+    .t3  { background-image: url("img/shark1.jpg"); }
+    .t4  { background-image: url("img/shark2.jpg"); }
+
+    .t5  { background-image: url("img/yoga.jpeg"); }
+    .t6  { background-image: url("img/book.jpeg"); }
+
+    .t7  { background-image: url("img/tenk.png"); }
+    .t8  { background-image: url("img/yoga2.JPG"); }
+
+    .t9  { background-image: url("img/cat2.png"); }
+    .t10 { background-image: url("img/cat1.png"); }
+    .t11 { background-image: url("img/marvell3.png"); }
+    .t12 { background-image: url("img/marvell2.jpeg"); }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Gallery</h1>
+  </header>
+  <nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Avi Choudhary</a>
+
+    <div class="nav-links">
+      <a href="interests.html">Interests</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+  </div>
+</nav>
+
+
+  <main class="content">
+    <div class="top-row">
+      <h2>Photo Collage</h2>
+    </div>
+    <section class="collage" aria-label="Gallery collage placeholders">
+      <div class="tile t1"><span class="label">Presenting at the Marvell CONNECT conference</span></div>
+      <div class="tile t2"><span class="label">Ran my first Half Marathon</span></div>
+      <div class="tile t3"><span class="label">Swam with Sharks</span></div>
+      <div class="tile t4"><span class="label">Fed some of those very hungry sharks</span></div>
+
+      <div class="tile t5"><span class="label">Daily Yoga Teacher Training Practice</span></div>
+      <div class="tile t6"><span class="label">My favorite section at Barnes and Noble</span></div>
+
+      <div class="tile t7"><span class="label">Ran my first 10K</span></div>
+      <div class="tile t8"><span class="label">Hot Yoga Sculpt Teacher Certified</span></div>
+
+      <div class="tile t9"><span class="label">Severe Medical Case cat Bing Bong loves usc</span></div>
+      <div class="tile t10"><span class="label">Another kitten I helped recover</span></div>
+      <div class="tile t11"><span class="label">Connect Conference Badge!</span></div>
+      <div class="tile t12"><span class="label">My first day at Marvell</span></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Avi Choudhary</p>
+      <div class="footer-links">
+        <a href="mailto:avichoud@usc.edu">Email</a>
+        <a href="https://www.linkedin.com/in/avichoud2023" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/avi30ch" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

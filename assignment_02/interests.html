@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avi Choudhary | Interest Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+.profile-img{
+  width: 100%;
+  height: 420px;
+  background-image: url("img/uscheaderimage.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 22px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.profile-img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
+}
+
+.profile-img span{
+  position: relative;
+  z-index: 1;
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.7),
+     1px -1px 0 rgba(0,0,0,0.7),
+    -1px  1px 0 rgba(0,0,0,0.7),
+     1px  1px 0 rgba(0,0,0,0.7);
+}
+
+.left-column{
+  padding: 10px 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.sidebar-figure{
+  margin: 0;
+  width: min(220px, 90%);
+  text-align: center;
+}
+
+.sidebar-figure img{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.14);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.22);
+}
+
+.sidebar-figure figcaption{
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.caption{
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 6px;
+    margin-bottom: 18px;
+}
+h2, .contentBreakdown, .hobbies-title{
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.2px;
+}
+
+h2{
+  font-size: 34px;
+  margin: 8px auto 18px;
+  font-weight: 700;
+}
+
+.contentBreakdown{
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  margin: 26px auto 14px;
+  text-align: center;
+}
+
+/* Cards */
+.about, .background{
+  width: 100%;
+  max-width: 860px;
+  margin: 14px auto;
+  padding: 18px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.about{ background: rgba(250,163,163,0.22); }
+.background{ background: rgba(246,246,157,0.30); }
+
+.about:hover, .background:hover, .hobbies-section:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+}
+
+/* Overlaps */
+.about-section, .background-section{
+  position: relative;
+  width: 100%;
+  margin: 18px auto 28px;
+}
+.portrait-photo{
+      position: absolute;
+      top: 500px;
+      right: 1550px;
+      width: 260px;
+      height: auto;
+      border-radius: 18px;
+      border: 3px solid rgba(255,255,255,0.95);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.35);
+      z-index: 3;
+    }
+    .portrait-photo:hover{
+      box-shadow: 0 26px 70px rgba(0,0,0,0.42);
+    }
+    .marvell-photo{
+        position: absolute;
+        top: 400px;
+        right: 1250px;
+        height: auto;
+        border-radius: 18px;
+        border: 3px solid rgba(255,255,255,0.95);
+        box-shadow: 0 20px 55px rgba(0,0,0,0.35);
+        z-index: 3;
+    }
+
+    .background-section{
+        padding-left: 120px;
+    }
+
+    .family-photo{
+        position: absolute;
+        top: 300px;
+        right: 1350px;
+        width: 300px;
+        height: auto;
+        border-radius: 18px;
+        border: 3px solid rgba(255,255,255,0.95);
+        box-shadow: 0 20px 55px rgba(0,0,0,0.35);
+        z-index: 3;
+    }
+    .wrap-img{
+        width: 220px;                /* smaller = better wrapping */
+        height: auto;
+        float: right;
+
+        margin: 6px 0 10px 16px;     /* top | right | bottom | left */
+
+        border-radius: 14px;
+        border: 2px solid rgba(255,255,255,0.95);
+        box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+        background: white;
+        padding: 4px;
+    }
+    .about::after{
+        content: "";
+        display: block;
+        clear: both;
+   }
+
+    @media (max-width: 700px){
+    .wrap-img{
+        float: none;
+        display: block;
+        margin: 12px auto;
+        width: 90%;
+    }
+    }
+
+    /* ===== Navigation Bar ===== */
+.site-nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+.nav-inner{
+  width: min(1100px, 88%);
+  margin: 0 auto;
+  padding: 14px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo{
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-links{
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a{
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover highlight */
+.nav-links a:hover{
+  background: rgba(140, 0, 40, 0.12);
+  color: var(--accent);
+}
+
+
+
+    .wrap-img.left{ float: left; 
+    margin: 6px 16px 10px 0;
+    }
+    .wrap-img.right{
+        float: right;
+    }
+    .clearfix{ clear: both; }
+
+    .bayArea-photo{
+        top: 350px;
+        right: 1350px;
+        width: 300px;
+        height: auto;
+        border: 3px solid rgba(255,255,255,0.95);
+        box-shadow: 0 20px 55px rgba(0,0,0,0.35);
+        z-index: 3;
+    }
+
+    .hobbies-section{
+        width: 100%;
+        max-width: 980px;
+        margin: 18px auto 0;
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        padding: 18px;
+        border-radius: var(--radius);
+        background: rgba(255,255,255,0.55);
+        border: 1px solid rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+.hobbies-left{ text-align: left; flex: 1; }
+.hobbies-title{ font-size: 20px; margin: 6px 0 14px; font-weight: 700; }
+
+.interests{
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.7;
+  padding-left: 22px;
+  margin: 0;
+}
+.interests li{ margin-bottom: 10px; }
+
+.collage{
+  width: 45%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.collage img{
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.16);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+
+/* Responsive */
+@media (max-width: 980px){
+  .page-layout{
+    grid-template-columns: 1fr;
+    padding: 18px 12px 50px;
+  }
+  .container{ padding: 28px 18px 34px; }
+  .marvell-photo, .family-photo{
+    position: static;
+    display: block;
+    margin: 16px auto;
+  }
+  .background-section{ padding-left: 0; }
+  .hobbies-section{ flex-direction: column; }
+  .collage{ width: 100%; }
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="profile-img">
+    <span>Avi Choudhary</span>
+  </header>
+  <nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Avi Choudhary</a>
+
+    <div class="nav-links">
+      <a href="interests.html">Interests</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="page-layout">
+    <aside class="left-column">
+
+      <figure class="sidebar-figure">
+        <img src="img/Portrait.png" alt="Portrait of Avi">
+        <figcaption>Computer Science @ USC • AI Engineer</figcaption>
+      </figure>
+
+      <figure class="sidebar-figure">
+        <img src="img/family1.jpg" alt="Family photo">
+        <figcaption>USC Family Weekend Football Game</figcaption>
+      </figure>
+    </aside>
+
+
+    <div class="center-column">
+      <div class="container">
+
+        <h2>B.S. Computer Science at the University of Southern California</h2>
+
+        <div class="about-section">
+          <h3 class="contentBreakdown">Overview</h3>
+
+          <p class="about">
+            My interests lie heavily in the tech industry, ranging from designing artificial <img src="img/marvell.jpg" alt="Marvell campus" class="wrap-img right"> intelligence models 
+            to developing full stack applications. I am currently an AI Engineer for 
+            <a href="https://www.marvell.com" target="_blank" rel="noopener">Marvell Semiconductors</a>, where  
+            I have deployed Claude Sonnet models for internal project management use as well as design verification enhancements.
+          </p>
+
+          <p class="about">
+            In addition to my work at Marvell, I have also interned at a startup company Job Pulse. As a full stack Engineer, 
+           I worked
+            with the US Department of Defense 
+            
+            to develop an application that can be used for its labor statistics, trends, and analysis for the
+            technology job market.
+            
+          </p>
+
+          
+        </div>
+
+        <div class="background-section">
+          <h4 class="contentBreakdown">Background</h4>
+
+          <p class="background">
+            Growing up in the Bay Area, <img src="img/bayarea.jpg" alt="BayArea photo" class="wrap-img left"> I have always been grateful to be surrounded with like minded individuals
+            who are passionate about computer science and technology. Witnessing 
+            
+            both my parents working on code
+            
+            that is actively moving the industry forward has inspired me to similarly pursue a career in advancing technology.
+            
+          </p>
+
+          <p class="background">
+            I believe that technology has the power to save lives, from biomedical applications to future climate change solutions.
+            Given how AI has rapidly taken over the way our society functions, I hope to be a part of this trend and make AI
+            more niche towards specific applications.
+            
+          </p>
+        </div>
+
+        <h4 class="contentBreakdown">Hobbies &amp; Interests</h4>
+
+        <div class="hobbies-section">
+          <div class="hobbies-left">
+            <p class="hobbies-title">Outside of technology, I take pride in my diverse interests and hobbies!</p>
+            <ol class="interests">
+              <li>Pursuing a minor in fashion to explore integrating AI with fashion</li>
+              <li>Training for my first marathon (Los Angeles Marathon)</li>
+              <li>Hot Yoga Sculpt teacher training certified</li>
+              <li>Avid reader of fantasy and non-fiction (though I have a strong preference for fantasy)</li>
+              <li>Volunteer on the medical team at a Downtown LA cat shelter</li>
+              <li>BIG Christopher Nolan fan — ask me anything about his films!</li>
+            </ol>
+          </div>
+
+          <div class="collage">
+            <img src="img/halfM.png" alt="Half marathon">
+            <img src="img/cat1.png" alt="Cat shelter">
+            <img src="img/shark1.JPG" alt="Diving">
+            <img src="img/shark2.JPG" alt="Diving">
+            <img src="img/book.jpeg" alt="Books">
+            <img src="img/yoga.jpeg" alt="Yoga">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="right-column"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Avi Choudhary</p>
+      <div class="footer-links">
+        <a href="mailto:avichoud@usc.edu">Email</a>
+        <a href="https://www.linkedin.com/in/avichoud2023" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/avi30ch" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
