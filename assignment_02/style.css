@@ -18,7 +18,7 @@ body{
 
 .page-layout{
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 1100px) 0.7fr; /* small / big / smallest */
+  grid-template-columns: 1fr minmax(300px, 1100px) 0.7fr;
   gap: 0;
   min-height: 100vh;
   padding: 34px 0 60px;
@@ -58,7 +58,7 @@ a:hover{ border-bottom-color: rgba(140,0,40,1); }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.85);
+  background: rgba(100, 67, 67, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(0,0,0,0.10);
 }
@@ -104,8 +104,6 @@ a:hover{ border-bottom-color: rgba(140,0,40,1); }
   color: var(--accent);
 }
 
-
-/* ===== Footer ===== */
 .site-footer{
   background: rgba(140, 0, 40, 0.18);
   border-top: 1px solid rgba(0,0,0,0.10);
