@@ -18,11 +18,12 @@ body{
 
 .page-layout{
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 1100px) 0.7fr;
+  grid-template-columns: 1fr minmax(300px, 1100px) 0.7fr; 
   gap: 0;
   min-height: 100vh;
   padding: 34px 0 60px;
 }
+
 
 .container{
   width: 100%;
@@ -57,19 +58,42 @@ a:hover{ border-bottom-color: rgba(140,0,40,1); }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(253, 251, 251, 0.85);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(0,0,0,0.10);
+  align-items: center;
 }
 
 .nav-inner{
-  width: min(1100px, 88%);
   margin: 0 auto;
-  padding: 14px 10px;
+  padding: 38px 38px;
 
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  font-family: "Inter", sans-serif;
+}
+.nav-links a{
+  border-bottom: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.95);
+  color: var(--accent);
+  border-color: rgba(140,0,40,0.25);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover{
+  background: rgba(255,255,255,0.95);
+  color: var(--accent);
+  border-color: rgba(140,0,40,0.25);
 }
 
 .nav-logo{
@@ -90,14 +114,15 @@ a:hover{ border-bottom-color: rgba(140,0,40,1); }
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 15px;
-  color: var(--muted);
+  color: var(--accent);
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 8px;
+  background: rgba(140, 0, 40, 0.12);
+
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Hover highlight */
 .nav-links a:hover{
   background: rgba(140, 0, 40, 0.12);
   color: var(--accent);
@@ -119,7 +144,6 @@ a:hover{ border-bottom-color: rgba(140,0,40,1); }
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
-
   font-family: "Inter", sans-serif;
 }
 
