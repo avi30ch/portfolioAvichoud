@@ -63,12 +63,12 @@
       </ul>
     </article>
 
-    <article class="project-card" aria-labelledby="overlay-network-title">
-      <h2 id="overlay-network-title">Overlay Network Congestion Control and Routing Model</h2>
+    <article class="project-card" aria-labelledby="bandwidth-server-title">
+      <h2 id="bandwidth-server-title">Multithreaded HTTP Server with Bandwidth Limiting</h2>
       <ul>
-        <li>Coded key features of link, network, application, and transport layers to maintain consistent communication between servers.</li>
-        <li>Enforced bandwidth throttling at 1 KB/sec using controlled sleep intervals and a token bucket algorithm, verified through wget.</li>
-        <li>Applied principles of TCP/UDP transport protocols, routing algorithms (OSPF/BGP), error detection, and the traceroute utility to analyze routing paths and latency, ensuring high throughput and minimal packet loss in a simulated network.</li>
+        <li>Built a C++17 HTTP file server using POSIX sockets, a fixed worker pool, and a bounded connection queue to serve concurrent downloads.</li>
+        <li>Implemented per-connection bandwidth limiting with a byte-based token bucket, monotonic-clock replenishment, and configurable transfer rates starting at 1 KiB/sec.</li>
+        <li>Added binary-safe transfers, partial-write handling, request timeouts, document-root validation, and automated integration checks for download integrity, concurrency, rate limits, and error responses.</li>
       </ul>
     </article>
   </main>
