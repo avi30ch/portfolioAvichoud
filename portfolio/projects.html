@@ -25,6 +25,25 @@
   box-shadow: 0 12px 36px rgba(0,0,0,0.12);
 }
 .project-card h2{ margin: 0 0 20px; font-size: clamp(21px, 3vw, 26px); line-height: 1.4; }
+.project-card h2 a{
+  color: #bde0ef;
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration-color: #8db5c7;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+.project-card h2 a::after{ content: " ↗"; white-space: nowrap; }
+.project-card h2 a:hover{
+  color: #e2f3fa;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+.project-card h2 a:focus-visible{
+  outline: 2px solid #bde0ef;
+  outline-offset: 6px;
+  border-radius: 3px;
+}
 .project-card ul{ margin: 0; padding-left: 22px; }
 .project-card li{ margin: 12px 0; }
 .project-card li::marker{ color: var(--accent, #dac7a8); }
