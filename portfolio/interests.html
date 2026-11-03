@@ -3,50 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avi Choudhary | Interest Page</title>
+  <title>Avi Choudhary | Background</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261103-bordered-cards">
   <style>
-.profile-img{
-  width: 100%;
-  height: 420px;
-  background-image: url("img/uscheaderimage.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 22px;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 56px;
-  letter-spacing: 0.5px;
-  color: white;
-}
-
-.profile-img::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
-}
-
-.profile-img span{
-  position: relative;
-  z-index: 1;
-  text-shadow:
-    -1px -1px 0 rgba(0,0,0,0.7),
-     1px -1px 0 rgba(0,0,0,0.7),
-    -1px  1px 0 rgba(0,0,0,0.7),
-     1px  1px 0 rgba(0,0,0,0.7);
-}
-
 .left-column{
   padding: 10px 18px 0;
   display: flex;
@@ -65,7 +29,7 @@
   width: 100%;
   height: auto;
   border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.14);
+  border: 1px solid var(--line);
   box-shadow: 0 12px 26px rgba(0,0,0,0.22);
 }
 
@@ -82,7 +46,7 @@
     margin-top: 6px;
     margin-bottom: 18px;
 }
-h2, .contentBreakdown, .hobbies-title{
+h2, .hobbies-title{
   font-family: "Inter", sans-serif;
   letter-spacing: 0.2px;
 }
@@ -93,16 +57,6 @@ h2{
   font-weight: 700;
 }
 
-.contentBreakdown{
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--muted);
-  margin: 26px auto 14px;
-  text-align: center;
-}
-
 /* Cards */
 .about, .background{
   width: 100%;
@@ -110,15 +64,15 @@ h2{
   margin: 14px auto;
   padding: 18px 18px;
   border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
   box-shadow: 0 10px 28px rgba(0,0,0,0.08);
   font-size: 18px;
   line-height: 1.8;
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.about{ background: rgba(250,163,163,0.22); }
-.background{ background: rgba(246,246,157,0.30); }
+.about{ background: var(--surface); }
+.background{ background: var(--surface); display: flow-root; }
 
 .about:hover, .background:hover, .hobbies-section:hover{
   transform: translateY(-2px);
@@ -157,7 +111,7 @@ h2{
     }
 
     .background-section{
-        padding-left: 120px;
+        padding-left: 0;
     }
 
     .family-photo{
@@ -179,9 +133,9 @@ h2{
         margin: 6px 0 10px 16px;     /* top | right | bottom | left */
 
         border-radius: 14px;
-        border: 2px solid rgba(255,255,255,0.95);
+        border: 2px solid var(--line);
         box-shadow: 0 14px 32px rgba(0,0,0,0.25);
-        background: white;
+        background: var(--card);
         padding: 4px;
     }
     .about::after{
@@ -226,8 +180,8 @@ h2{
         align-items: flex-start;
         padding: 18px;
         border-radius: var(--radius);
-        background: rgba(255,255,255,0.55);
-        border: 1px solid rgba(0,0,0,0.08);
+        background: var(--surface);
+        border: 1px solid var(--line);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -254,10 +208,15 @@ h2{
   height: 140px;
   object-fit: cover;
   border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.16);
+  border: 1px solid var(--line);
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
 
+
+@media (max-width: 700px){
+  .wrap-img.left, .wrap-img.right{ float: none; display: block; margin: 12px auto; max-width: 100%; }
+  h2{ font-size: 26px; }
+}
 
 /* Responsive */
 @media (max-width: 980px){
@@ -280,32 +239,19 @@ h2{
 </head>
 
 <body>
-  <header class="profile-img">
-    <span>Avi Choudhary</span>
-  </header>
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
 
     <div class="nav-links">
-      <a href="interests.html">Interests</a>
+      <a href="interests.html" aria-current="page">Background</a>
+      <a href="projects.html">Projects</a>
       <a href="gallery.html">Gallery</a>
     </div>
   </div>
 </nav>
 
-  <div class="page-layout">
-    <aside class="left-column">
+  <div class="page-layout background-page">
 
-      <figure class="sidebar-figure">
-        <img src="img/Portrait.png" alt="Portrait of Avi">
-        <figcaption>Computer Science @ USC • AI Engineer</figcaption>
-      </figure>
-
-      <figure class="sidebar-figure">
-        <img src="img/family1.jpg" alt="Family photo">
-        <figcaption>USC Family Weekend Football Game</figcaption>
-      </figure>
-    </aside>
 
 
     <div class="center-column">
@@ -313,15 +259,72 @@ h2{
 
         <h2>B.S. Computer Science at the University of Southern California</h2>
 
-        <div class="about-section">
-          <h3 class="contentBreakdown">Overview</h3>
+        <div class="background-section">
+          <h4 class="contentBreakdown">Overview</h4>
+  <aside class="profile-header" aria-label="About Avi">
+    <img class="profile-portrait" src="img/Portrait.png" alt="Portrait of Avi Choudhary" width="260">
+    <div class="profile-intro">
+      <h1>Avi Choudhary</h1>
+      <p>AI/ML Software Engineer</p>
+      <p>San Jose, California</p>
+    </div>
+  </aside>
 
-          <p class="about">
-            My interests lie heavily in the tech industry, ranging from designing artificial <img src="img/marvell.jpg" alt="Marvell campus" class="wrap-img right"> intelligence models 
-            to developing full stack applications. I am currently an AI Engineer for 
-            <a href="https://www.marvell.com" target="_blank" rel="noopener">Marvell Semiconductors</a>, where  
-            I have deployed Claude Sonnet models for internal project management use as well as design verification enhancements.
+
+          <p class="background">
+            <img src="img/bayarea.jpg" alt="San Francisco Bay Area" class="wrap-img left">
+            Growing up in the Bay Area, I was surrounded by people who were passionate about computer science
+            and the possibilities of technology. Both of my parents work with code, and seeing their contributions
+            to the industry helped me recognize software as a way to turn ideas into something useful.
+            Their example inspired me to pursue computer science and build a career creating tools that help
+            people solve meaningful problems.
           </p>
+
+          <p class="background">
+            At the University of Southern California, I built a foundation in algorithms, operating systems,
+            computer networks, and artificial intelligence. Projects ranging from a concurrent stock-trading
+            application to a C++ limit-order-book engine have given me opportunities to explore how software
+            behaves under real constraints: coordinating concurrent requests, maintaining correctness, and
+            measuring performance. My work at Marvell and Alation has extended that perspective to AI systems,
+            where usefulness also depends on evaluation, context management, and understanding the needs of
+            the people using the product.
+          </p>
+
+          <p class="background">
+            I believe technology can improve lives through applications in healthcare, climate solutions,
+            and the tools people rely on every day. I am especially interested in adapting AI to specific
+            domains, where a strong understanding of the problem can make a system more useful and reliable.
+            As I continue my career, I want to combine my interests in AI, systems programming, and full-stack
+            development to build practical products, learn from engineers with different perspectives,
+            and take ownership of problems from the first design decision through deployment and improvement.
+          </p>
+        </div>
+
+        <div class="about-section">
+          <h3 class="contentBreakdown">Work Experience</h3>
+
+          <article class="about experience-card" aria-labelledby="alation-title">
+            <img src="img/alation.png" alt="Alation logo" class="employer-img alation-img">
+            <h4 id="alation-title">Alation</h4>
+            <p>
+            My interests span end-to-end AI systems, high-performance C++ software, and full-stack applications.
+            I am currently an AI/ML Software Engineer at Alation Intelligence Operating Systems, where I develop
+            evaluation pipelines for AI accuracy, latency, stability, and agent behavior. My context-management
+            improvements have reduced token consumption by 11% while preserving model accuracy and latency.
+            </p>
+          </article>
+
+          <article class="about experience-card" aria-labelledby="marvell-title">
+            <img src="img/marvell.jpg" alt="Marvell campus" class="employer-img marvell-img" width="240" style="max-width: 100%; height: auto;">
+            <h4 id="marvell-title">Marvell Technology</h4>
+            <p>
+            Previously, as a Machine Learning Engineer Intern at
+            <a href="https://www.marvell.com" target="_blank" rel="noopener">Marvell Technology</a>, I built and deployed
+            an LLM agent using Amazon Bedrock and Claude Sonnet 3.7 to support over 100 chip-design engineers.
+            I also developed parallelized C++ components and a web interface for AI chat and MongoDB data visualization
+            to help design verification engineers monitor project progress.
+            </p>
+          </article>
 
           <p class="about">
             In addition to my work at Marvell, I have also interned at a startup company Job Pulse. As a full stack Engineer, 
@@ -336,26 +339,17 @@ h2{
           
         </div>
 
-        <div class="background-section">
-          <h4 class="contentBreakdown">Background</h4>
-
-          <p class="background">
-            Growing up in the Bay Area, <img src="img/bayarea.jpg" alt="BayArea photo" class="wrap-img left"> I have always been grateful to be surrounded with like minded individuals
-            who are passionate about computer science and technology. Witnessing 
-            
-            both my parents working on code
-            
-            that is actively moving the industry forward has inspired me to similarly pursue a career in advancing technology.
-            
-          </p>
-
-          <p class="background">
-            I believe that technology has the power to save lives, from biomedical applications to future climate change solutions.
-            Given how AI has rapidly taken over the way our society functions, I hope to be a part of this trend and make AI
-            more niche towards specific applications.
-            
-          </p>
-        </div>
+        <section aria-labelledby="awards-title">
+          <h4 id="awards-title" class="contentBreakdown">Awards &amp; Achievements</h4>
+          <div class="about">
+            <ul>
+              <li><strong>USA Computing Olympiad (USACO):</strong> Gold Division</li>
+              <li><strong>American Computer Science League (ACSL):</strong> International Invitational Finalist</li>
+              <li><strong>Stanford Invitational Speech Tournament:</strong> 1st Place, Varsity Program Oral Interpretation</li>
+              <li><strong>Marvell ConnectSC Conference:</strong> Selected through a competitive company-wide process to present AI-driven chip design tools to engineers and executives</li>
+            </ul>
+          </div>
+        </section>
 
         <h4 class="contentBreakdown">Hobbies &amp; Interests</h4>
 

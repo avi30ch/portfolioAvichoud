@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avi Choudhary | Projects</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20261103-bordered-cards">
+  <style>
+.projects-content{
+  width: min(1100px, calc(100% - 32px));
+  min-height: 45vh;
+  margin: 32px auto 64px;
+}
+.project-card{
+  margin-bottom: 24px;
+  padding: clamp(22px, 4vw, 36px);
+  border: 2px solid var(--line, #64625c);
+  border-top: 2px solid var(--accent, #dac7a8);
+  border-radius: var(--radius, 14px);
+  background: var(--surface, #484641);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+.project-card h2{ margin: 0 0 20px; font-size: clamp(21px, 3vw, 26px); line-height: 1.4; }
+.project-card ul{ margin: 0; padding-left: 22px; }
+.project-card li{ margin: 12px 0; }
+.project-card li::marker{ color: var(--accent, #dac7a8); }
+
+  </style>
+</head>
+<body>
+  <header class="projects-header">
+    <h1>Projects</h1>
+    <p>Selected work in software engineering and AI.</p>
+  </header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="interests.html">Background</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </div>
+  </nav>
+  <main class="projects-content">
+    <article class="project-card" aria-labelledby="order-book-title">
+      <h2 id="order-book-title"><a href="https://github.com/avi30ch/quantLimitOrder" target="_blank" rel="noopener">High-Performance Limit Order Book &amp; Quantitative Trading Engine</a></h2>
+      <ul>
+        <li>Engineered a limit-order-book and matching engine supporting limit orders, cancellations, partial fills, and price-time priority.</li>
+        <li>Implemented ordered bid/ask price levels and constant-time order lookup to support efficient order matching and cancellation.</li>
+        <li>Developing performance benchmarks to measure order-processing throughput and p95 execution latency.</li>
+      </ul>
+    </article>
+
+    <article class="project-card" aria-labelledby="stock-exchange-title">
+      <h2 id="stock-exchange-title"><a href="https://github.com/avi30ch/stockMarketExchange" target="_blank" rel="noopener">Stock Market Exchange Web Application</a></h2>
+      <ul>
+        <li>Built a multithreaded stock-trading application supporting concurrent buy/sell requests, transaction execution, and real-time stock performance views.</li>
+        <li>Implemented synchronized transaction handling to maintain consistent application state, preventing race conditions across concurrent trade requests.</li>
+      </ul>
+    </article>
+
+    <article class="project-card" aria-labelledby="overlay-network-title">
+      <h2 id="overlay-network-title">Overlay Network Congestion Control and Routing Model</h2>
+      <ul>
+        <li>Coded key features of link, network, application, and transport layers to maintain consistent communication between servers.</li>
+        <li>Enforced bandwidth throttling at 1 KB/sec using controlled sleep intervals and a token bucket algorithm, verified through wget.</li>
+        <li>Applied principles of TCP/UDP transport protocols, routing algorithms (OSPF/BGP), error detection, and the traceroute utility to analyze routing paths and latency, ensuring high throughput and minimal packet loss in a simulated network.</li>
+      </ul>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Avi Choudhary</p>
+      <div class="footer-links">
+        <a href="mailto:avichoud@usc.edu">Email</a>
+        <a href="https://www.linkedin.com/in/avichoud2023" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/avi30ch" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
